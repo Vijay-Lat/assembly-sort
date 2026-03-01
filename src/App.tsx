@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import * as loader from "@assemblyscript/loader";
-
+// @ts-ignore
 // Define the shape of our Agent in JS
 interface Agent {
   name: string;
@@ -10,20 +10,22 @@ interface Agent {
 }
 
 // Map the Sort Keys to the Enum in AssemblyScript
+// @ts-ignore
 enum SortKey { NAME = 0, OFFICE = 1, RATING = 2, REVIEWS = 3 }
-
-const App: React.FC = () => {
+// @ts-ignore
+const App = () => {
   const [wasm, setWasm] = useState<any>(null);
   const [numOne, setNumOne] = useState<string>('');
   const [numTwo, setNumTwo] = useState<string>('');
   const [sum, setSum] = useState<string>('');
-
+// @ts-ignore
   const [agents, setAgents] = useState<Agent[]>([
     { name: 'Aaron', office: 'C21', rating: 2.5, reviews: 321 },
     { name: 'Zeke', office: 'REMAX', rating: 4.8, reviews: 120 },
     { name: 'Becky', office: 'C21', rating: 3.9, reviews: 50 },
     { name: 'Charlie', office: 'Liberty', rating: 4.2, reviews: 210 }
   ]);
+  // @ts-ignore
   const [displayList, setDisplayList] = useState<Agent[]>([]);
 
   // 1. Load the Wasm Module on Mount
